@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f4f4f9;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  max-height: 100vh; /* Altura máxima del contenedor */
+  overflow-y: auto; /* Permitir desplazamiento vertical */
+  border: 1px solid #ccc; /* Opcional: agregar un borde para distinguir el contenedor */
+  padding: 10px; /* Opcional: agregar un poco de espacio interno */
+  margin-top: 15px; 
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.idea-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.idea-form input,
+.idea-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.idea-form button {
+  padding: 8px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.idea-form button:hover {
+  background-color: #0056b3;
+}
+
+button#assignButton {
+  width: 100%;
+  padding: 8px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 15px;
+}
+
+button#assignButton:hover {
+  background-color: #218838;
+}
+
+#ideasContainer {
+  margin-top: 15px; /* Espacio superior para separar del resto */
+}
+
+.idea-item {
+  background: #e9ecef; /* Color de fondo */
+  padding: 8px; /* Espaciado interno */
+  border-radius: 4px; /* Bordes redondeados */
+  margin-bottom: 8px; /* Espacio entre ideas */
+  display: flex; /* Usar flex para alinear elementos */
+  justify-content: space-between; /* Espacio entre el texto y el botón */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.idea-item span {
+  font-size: 14px; /* Tamaño de fuente */
+  color: #333; /* Color del texto */
+}
+
+.idea-item button {
+  background-color: #dc3545; /* Color de fondo del botón */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 12px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  transition: background-color 0.3s; /* Transición suave */
+  padding: 4px 8px; /* Espaciado interno */
+}
+
+.idea-item button:hover {
+  background-color: #c82333; /* Color de fondo al pasar el mouse */
+}
+
+.assignment-item h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.assignment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px; /* Espacio superior para separar de otros elementos */
+}
+
+.assignment-table th,
+.assignment-table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.assignment-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.assignment-table td {
+  background-color: #f8f9fa;
+}
+
+.assignment-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 15px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilos para la lista de evaluadores */
+#modalEvaluadorContainer ul {
+  list-style-type: none; /* Eliminar los puntos de la lista */
+  padding: 0; /* Eliminar el padding */
+  margin: 0; /* Eliminar el margen */
+}
+
+#modalEvaluadorContainer li {
+  padding: 8px; /* Espaciado interno para cada elemento de la lista */
+  border-bottom: 1px solid #ccc; /* Línea divisoria entre elementos */
+}
+
+#modalEvaluadorContainer li:last-child {
+  border-bottom: none; /* Eliminar la línea divisoria del último elemento */
+}
+
+#modalEvaluadorContainer label {
+  cursor: pointer; /* Cambiar el cursor al pasar sobre la etiqueta */
+}
+
+.header {
+  display: flex; /* Usar flex para alinear el título y el botón */
+  justify-content: space-between; /* Espacio entre el título y el botón */
+  align-items: center; /* Centrar verticalmente */
+  margin-bottom: 15px; /* Margen inferior para separar del resto */
+}
+
+.header h1 {
+  font-size: 22px; /* Tamaño de fuente del título */
+  color: #333; /* Color del texto */
+  margin: 0; /* Eliminar margen */
+}
+
+.header button {
+  padding: 8px 12px; /* Padding para el botón */
+  background-color: #007bff; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.header button:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.linea-tecnologica-container {
+  display: flex; /* Cambiar a flex para alinear elementos en línea */
+  align-items: center; /* Centrar verticalmente */
+  gap: 8px; /* Espacio entre el select y el botón */
+}
+
+.linea-tecnologica-container select {
+  flex: 1; /* Hacer que el select ocupe el espacio disponible */
+}
+
+.linea-tecnologica-container button {
+  padding: 8px; /* Padding para el botón */
+  background-color: #007bff; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.linea-tecnologica-container button:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.whatsapp-button {
+  padding: 4px 8px; /* Espaciado interno */
+  background-color: #25D366; /* Color de fondo de WhatsApp */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 12px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  margin-left: 8px; /* Espacio a la izquierda del botón */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.whatsapp-button:hover {
+  background-color: #128C7E; /* Color de fondo al pasar el mouse */
+}

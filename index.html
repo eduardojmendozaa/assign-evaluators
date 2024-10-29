@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asignación de Evaluadores</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="header">
+        <h1>Asignación de Evaluadores</h1>
+        <button id="selectEvaluatorsButton">Seleccionar Evaluadores</button>
+      </div>
+      <div class="idea-form">
+        <input type="text" id="ideaName" placeholder="Nombre de la idea" />
+        <div class="linea-tecnologica-container">
+          <select id="lineaTecnologica">
+            <option value="" disabled selected>Seleccionar línea tecnológica</option>
+            <option value="TV">TV</option>
+            <option value="ET">ET</option>
+            <option value="BIO">BIO</option>
+            <option value="ID">ID</option>
+          </select>
+          <button id="addIdeaButton">Agregar Idea</button>
+        </div>
+      </div>
+      <div id="ideasContainer"></div> <!-- Contenedor para mostrar las ideas -->
+      <button id="assignButton">Asignar Evaluadores</button>
+      <select id="groupBySelect">
+        <option value="idea">Agrupar por idea</option>
+        <option value="evaluator">Agrupar por evaluador</option>
+      </select>
+      <div id="assignments"></div> <!-- Contenedor para mostrar las asignaciones -->
+    </div>
+    <!-- Agregar el modal para seleccionar evaluadores -->
+    <div id="evaluatorModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Seleccionar Evaluadores</h2>
+        <div id="modalEvaluadorContainer">
+          <!-- Los evaluadores se llenarán dinámicamente como checkboxes -->
+        </div>
+        <button id="confirmSelectionButton">Confirmar Selección</button>
+      </div>
+    </div>
+    <script src="evaluatorAssigner.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
