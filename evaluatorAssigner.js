@@ -89,6 +89,7 @@ const displayAssignments = (assignments) => {
       
       // Crear una lista desordenada para los evaluadores
       const evaluadoresList = document.createElement("ul");
+      evaluadoresList.classList.add("evaluator-list"); // Asignar clase para estilos
       assignment.evaluadores.forEach(evaluador => {
         const listItem = document.createElement("li");
         listItem.textContent = evaluador; // Agregar el nombre del evaluador
@@ -159,6 +160,7 @@ const displayAssignments = (assignments) => {
       
       // Crear una lista desordenada para las ideas
       const ideasList = document.createElement("ul");
+      ideasList.classList.add("idea-list"); // Asignar clase para estilos
       evaluatorAssignments[evaluador].forEach(idea => {
         const listItem = document.createElement("li");
         listItem.textContent = idea; // Agregar el nombre de la idea

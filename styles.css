@@ -272,3 +272,32 @@ button#assignButton:hover {
 .whatsapp-button:hover {
   background-color: #128C7E; /* Color de fondo al pasar el mouse */
 }
+
+/* Estilos para las listas de ideas y evaluadores */
+.assignment-table ul,
+.evaluator-list ul {
+  list-style-type: none; /* Eliminar los puntos de la lista */
+  padding: 0; /* Eliminar el padding */
+  margin: 0; /* Eliminar el margen */
+}
+
+.assignment-table li,
+.evaluator-list li {
+  padding: 8px; /* Espaciado interno para cada elemento de la lista */
+  border-bottom: 1px solid #ccc; /* Línea divisoria entre elementos */
+  display: flex; /* Usar flex para alinear elementos */
+  justify-content: space-between; /* Espacio entre el texto y el botón */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.assignment-table li:last-child,
+.evaluator-list li:last-child {
+  border-bottom: none; /* Eliminar la línea divisoria del último elemento */
+}
+
+.assignment-table li span,
+.evaluator-list li span {
+  flex: 1; /* Hacer que el texto ocupe el espacio disponible */
+  color: #333; /* Color del texto */
+  font-size: 14px; /* Tamaño de fuente */
+}
